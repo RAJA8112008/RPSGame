@@ -1,6 +1,7 @@
 let userScore=0;
 let compScore=0;
 const choices=document.querySelectorAll(".choice");
+const  msg=document.querySelector("#msg");
 //computer choicing process according to user choice
 //Computer choice
 const gencomchoice=(choice)=>{
@@ -11,10 +12,17 @@ const gencomchoice=(choice)=>{
 
 const showwinner=(userwin)=>{
    if(userwin){
-    console.log("You Win");
+    msg.innerHTML='You Win.';
+    msg.style.backgroundColor="green";
    }else{
-    console.log("You lose");
+     msg.innerHTML='You lose.';
+       msg.style.backgroundColor="red";
    }
+}
+
+const DrawMatch=()=>{
+    msg.innerHTML='Game Was Draw,Try again.';
+    msg.style.backgroundColor="#081b31";
 }
 //processing of both choices computer and user
 const playGame=(userChoice)=>{
@@ -23,7 +31,7 @@ const playGame=(userChoice)=>{
    console.log("Comp choice:",comchoice);
    //proceesing according to the choice who will win 1->mathDraw
    if(userChoice===comchoice){
-    console.log("Math Draw");
+    DrawMatch();
    }else{
     let userwin=true;
          //some conditions exists here
@@ -34,9 +42,8 @@ const playGame=(userChoice)=>{
         userwin=userChoice==='scissor'?true:false;
     }else{
         //scissor
-        userwin=userChoice==='paper'?false:true;
+        userwin=userChoice==='paper'? false:true;
     }
-    
     showwinner(userwin);
    }
 }
