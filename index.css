@@ -33,8 +33,9 @@ img{
 }
 .choices{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    
     gap:3rem;
     margin-top: 5rem;
 }
@@ -43,6 +44,8 @@ img{
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    margin-top: 3rem;
+    gap:5rem;
 }
 #User-score,
 #comp-score{
