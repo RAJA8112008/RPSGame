@@ -11,8 +11,8 @@ h1{
    height: 5rem;
 }
 .choice{
-    height:165px;
-    width:165px;
+    height:110px;
+    width:110px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
