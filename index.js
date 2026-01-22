@@ -8,11 +8,37 @@ const gencomchoice=(choice)=>{
     const rdmIdx=Math.floor(Math.random()*3);
     return options[rdmIdx];
 }
+
+const showwinner=(userwin)=>{
+   if(userwin){
+    console.log("You Win");
+   }else{
+    console.log("You lose");
+   }
+}
 //processing of both choices computer and user
 const playGame=(userChoice)=>{
    console.log("User choice:",userChoice);
    const comchoice=gencomchoice();
    console.log("Comp choice:",comchoice);
+   //proceesing according to the choice who will win 1->mathDraw
+   if(userChoice===comchoice){
+    console.log("Math Draw");
+   }else{
+    let userwin=true;
+         //some conditions exists here
+    // computer->rock
+    if(comchoice==='rock'){
+        userwin= userChoice==='scissor'?false:true;
+    }else if(comchoice==='paper'){
+        userwin=userChoice==='scissor'?true:false;
+    }else{
+        //scissor
+        userwin=userChoice==='paper'?false:true;
+    }
+    
+    showwinner(userwin);
+   }
 }
 
 choices.forEach((choice)=>{
