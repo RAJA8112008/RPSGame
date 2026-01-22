@@ -10,12 +10,12 @@ const gencomchoice=(choice)=>{
     return options[rdmIdx];
 }
 
-const showwinner=(userwin)=>{
+const showwinner=(userwin,comchoice,userChoice)=>{
    if(userwin){
-    msg.innerHTML='You Win.';
+    msg.innerHTML=`You Win.your ${userChoice} beats ${comchoice}`;
     msg.style.backgroundColor="green";
    }else{
-     msg.innerHTML='You lose.';
+     msg.innerHTML=`You lose.${comchoice} beats your ${userChoice}`;
        msg.style.backgroundColor="red";
    }
 }
@@ -44,7 +44,7 @@ const playGame=(userChoice)=>{
         //scissor
         userwin=userChoice==='paper'? false:true;
     }
-    showwinner(userwin);
+    showwinner(userwin,comchoice,userChoice);
    }
 }
 
