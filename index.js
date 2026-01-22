@@ -12,7 +12,6 @@ const genComChoice = () => {
     const rdmIdx = Math.floor(Math.random() * 3);
     return options[rdmIdx];
 };
-
 const showWinner = (userWin, compChoice, userChoice) => {
     if (userWin) {
          userScore++;
@@ -26,7 +25,6 @@ const showWinner = (userWin, compChoice, userChoice) => {
         msg.style.backgroundColor = "red";
     }
 };
-
 choices.forEach((choice) => {
     choice.addEventListener("click", () => {
         const userChoice = choice.getAttribute("id");
